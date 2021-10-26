@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+    <p>
   <strong>First name:</strong>
   <%= @friend.first_name %>
+  <%=  @friend.last_name%>
 </p>
-
 <p>
-  <strong>Last name:</strong>
-  <%= @friend.last_name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @friend.email %>
-</p>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @friend.email %></h6>
+    <p class="card-text">
+    Phone:
+    <%= @friend.phone %>
+    <br>
+    Twitter:
+    <%= @friend.twitter %>
+    </p>
+  </div>
+</div>
+<br>
+<%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-warning btn-sm" %>
+<%= link_to 'Back', friends_path, class:"btn btn-secondary btn-sm" %>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @friend.phone %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @friend.twitter %>
-</p>
-
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>
