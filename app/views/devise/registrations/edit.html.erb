@@ -3,41 +3,46 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field form-floating mb-3">
+    <%= f.email_field :email, autofocus: true,  id:"floatingInput",class:"form-control", placeholder:"aa" %>
+    <%= f.label :email , for:"floatingInput"%><br />
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="field form-floating mb-3">
+    <%= f.password_field :password,  id:"floatingInput",class:"form-control", placeholder:"aa" %>
+     <%= f.label :password, for:"floatingInput" %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <div class="error">
+      <em>*<%= @minimum_password_length %> characters minimum</em><br>
+      <i>* leave blank if you don't want to change it</i>
+      </div>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field form-floating mb-3">
+    <%= f.password_field :password_confirmation,  id:"floatingInput",class:"form-control", placeholder:"aa"%>
+    <%= f.label :password_confirmation , for:"floatingInput" %><br />
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="field form-floating mb-3">
+    <%= f.password_field :current_password,  id:"floatingInput",class:"form-control" , placeholder:"aa" %>
+    <%= f.label :current_password , for:"floatingInput" %> <i class="error">*we need your current password to confirm your changes</i><br />
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" , class:"btn btn-outline-warning" %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<p>Unhappy? &#127773;</p> 
+<div class="formDiv"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class:"btn btn-outline-danger" %></div>
+<%= link_to "Back", :back  , class:"btn btn-outline-secondary"%>
+<br>
+<br>
+<br>
