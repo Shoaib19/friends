@@ -9,7 +9,12 @@
   </div>
 
   <div class="field form-floating mb-3">
-    <%= f.password_field :password, id:"floatingInput",class:"form-control", placeholder:"aa"  %>
+    <%= f.text_field :name, id:"floatingInput",class:"form-control", placeholder:"aa" %>
+     <%= f.label :name, for:"floatingInput" %><br />
+  </div>
+
+  <div class="field form-floating mb-3">
+    <%= f.password_field :password, id:"floatingInput",class:"form-control pass", placeholder:"aa", remote: true %>
      <%= f.label :password , for:"floatingInput" %>
     <% if @minimum_password_length %>
     <em class="error">*<%= @minimum_password_length %> characters minimum</em>

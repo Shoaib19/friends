@@ -36,6 +36,10 @@
     <%= f.label :twitter, for:"floatingInput" %>
   </div>
 
+  <div class="form-floating mb-3">
+    <%= f.number_field :user_id , id:"floatingInput",class:"form-control", placeholder:"aa" , value: current_user.id , type: :hidden%>
+  </div>
+
   <div class="actions">
     <%= f.submit class:"btn btn-primary btn-sm" %>
   </div>

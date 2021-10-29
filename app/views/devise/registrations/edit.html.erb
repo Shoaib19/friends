@@ -11,7 +11,10 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+  <div class="field form-floating mb-3">
+    <%= f.text_field :name,  id:"floatingInput",class:"form-control", placeholder:"aa" %>
+    <%= f.label :name , for:"floatingInput"%><br />
+  </div>
   <div class="field form-floating mb-3">
     <%= f.password_field :password,  id:"floatingInput",class:"form-control", placeholder:"aa" %>
      <%= f.label :password, for:"floatingInput" %>
