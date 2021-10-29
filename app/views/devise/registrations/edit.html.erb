@@ -16,12 +16,12 @@
     <%= f.label :name , for:"floatingInput"%><br />
   </div>
   <div class="field form-floating mb-3">
-    <%= f.password_field :password,  id:"floatingInput",class:"form-control", placeholder:"aa" %>
+    <%= f.password_field :password,  id:"floatingInput",class:"form-control pass", placeholder:"aa" %>
      <%= f.label :password, for:"floatingInput" %>
     <% if @minimum_password_length %>
       <div class="error">
-      <em>*<%= @minimum_password_length %> characters minimum</em><br>
-      <i>* leave blank if you don't want to change it</i>
+      <em id="error">** <%= @minimum_password_length %> characters minimum</em><br>
+      <i id="info">** leave blank if you don't want to change it</i>
       </div>
     <% end %>
   </div>
@@ -32,8 +32,8 @@
   </div>
 
   <div class="field form-floating mb-3">
-    <%= f.password_field :current_password,  id:"floatingInput",class:"form-control" , placeholder:"aa" %>
-    <%= f.label :current_password , for:"floatingInput" %> <i class="error">*we need your current password to confirm your changes</i><br />
+    <%= f.password_field :current_password,  id:"floatingInput",class:"form-control pass2" , placeholder:"aa" %>
+    <%= f.label :current_password , for:"floatingInput" %> <i id="error2" class="error">*we need your current password to confirm your changes</i><br />
   </div>
 
   <div class="actions">

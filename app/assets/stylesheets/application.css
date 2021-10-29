@@ -14,7 +14,7 @@
  *= require_self
  */
 .error{
-    color: red;
+    color: rgba(195, 0, 255, 0.658);
 }
 .formDiv{
     display: inline;

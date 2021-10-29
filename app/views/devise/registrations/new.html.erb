@@ -17,7 +17,7 @@
     <%= f.password_field :password, id:"floatingInput",class:"form-control pass", placeholder:"aa", remote: true %>
      <%= f.label :password , for:"floatingInput" %>
     <% if @minimum_password_length %>
-    <em class="error">*<%= @minimum_password_length %> characters minimum</em>
+    <em class="error" id="error">** <%= @minimum_password_length %> characters minimum</em>
     <% end %><br />
   </div>
 
